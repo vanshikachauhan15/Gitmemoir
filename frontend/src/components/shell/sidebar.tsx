@@ -61,12 +61,12 @@ function Brand() {
     <Link
       href="/"
       className="flex items-center gap-2.5 px-6 py-6"
-      aria-label="GitPulse home"
+      aria-label="GitMemoir home"
     >
       <span className="flex size-8 items-center justify-center rounded-lg bg-[linear-gradient(135deg,#6366f1,#4f46e5)] shadow-[0_4px_16px_-4px_rgba(79,70,229,0.9)]">
         <Activity className="size-4 text-white" strokeWidth={2.5} />
       </span>
-      <span className="text-[15px] font-semibold tracking-tight text-ink">GitPulse</span>
+      <span className="text-[15px] font-semibold tracking-tight text-ink">GitMemoir</span>
     </Link>
   );
 }

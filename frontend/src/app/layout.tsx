@@ -18,15 +18,15 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gitpulse.vercel.app"),
+  metadataBase: new URL("https://gitmemoir.vercel.app"),
   title: {
-    default: "GitPulse — Your GitHub story, kept forever",
-    template: "%s · GitPulse",
+    default: "GitMemoir — Your GitHub story, kept forever",
+    template: "%s · GitMemoir",
   },
   description:
     "Track followers, repo traffic, and contributions in one place — with history GitHub doesn't keep.",
   openGraph: {
-    title: "GitPulse — Your GitHub story, kept forever",
+    title: "GitMemoir — Your GitHub story, kept forever",
     description:
       "Audience tracking, daily repo traffic, and contribution history — the archive GitHub never built.",
     type: "website",
@@ -45,7 +45,7 @@ export const viewport: Viewport = {
 const themeScript = `
 (function () {
   try {
-    var raw = localStorage.getItem("gitpulse:prefs");
+    var raw = localStorage.getItem("gitmemoir:prefs");
     if (!raw) return;
     var prefs = JSON.parse(raw);
     if (prefs.theme === "light") {

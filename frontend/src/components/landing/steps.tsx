@@ -12,7 +12,7 @@ const STEPS = [
     step: "01",
     icon: Github,
     title: "Connect your GitHub",
-    body: "Add your token once — GitPulse pulls profile, repos, followers, and traffic.",
+    body: "Add your token once — GitMemoir pulls profile, repos, followers, and traffic.",
     accent: "from-orange-400/20 to-transparent",
   },
   {

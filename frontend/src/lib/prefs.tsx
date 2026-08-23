@@ -35,7 +35,7 @@ const DEFAULTS: Prefs = {
   theme: "dark",
 };
 
-const KEY = "gitpulse:prefs";
+const KEY = "gitmemoir:prefs";
 
 interface Ctx {
   prefs: Prefs;

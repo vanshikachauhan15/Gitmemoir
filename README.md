@@ -1,14 +1,14 @@
-# GitPulse — GitHub Audience Tracker
+# GitMemoir — GitHub Audience Tracker
 
 <div align="center">
 
-[![Stars](https://img.shields.io/github/stars/KalyanM45/GitPulse?style=flat&logo=github&color=yellow)](https://github.com/KalyanM45/GitPulse/stargazers) [![Issues](https://img.shields.io/github/issues/KalyanM45/GitPulse?style=flat&logo=github)](https://github.com/KalyanM45/GitPulse/issues) [![Live Demo](https://img.shields.io/badge/Live-Demo-4f8ef7?style=flat&logo=vercel&logoColor=white)](https://gitpulse.vercel.app) [![Deployment](https://img.shields.io/badge/Deployment-success-brightgreen?style=flat&logo=render&logoColor=white)](https://gitpulse-api-tznz.onrender.com/health) [![Version](https://img.shields.io/badge/Version-0.1.0-a371f7?style=flat)](https://github.com/KalyanM45/GitPulse/releases)
+[![Stars](https://img.shields.io/github/stars/KalyanM45/GitMemoir?style=flat&logo=github&color=yellow)](https://github.com/KalyanM45/GitMemoir/stargazers) [![Issues](https://img.shields.io/github/issues/KalyanM45/GitMemoir?style=flat&logo=github)](https://github.com/KalyanM45/GitMemoir/issues) [![Live Demo](https://img.shields.io/badge/Live-Demo-4f8ef7?style=flat&logo=vercel&logoColor=white)](https://gitmemoir.vercel.app) [![Deployment](https://img.shields.io/badge/Deployment-success-brightgreen?style=flat&logo=render&logoColor=white)](https://gitmemoir-api-tznz.onrender.com/health) [![Version](https://img.shields.io/badge/Version-0.1.0-a371f7?style=flat)](https://github.com/KalyanM45/GitMemoir/releases)
 
 </div>
 
 ## About The Project
 
-GitPulse is a full-stack GitHub audience tracker built with FastAPI and MongoDB. On every sync it fetches your followers and following from the GitHub REST API, diffs them against the stored snapshot in MongoDB, and logs every change as a timestamped event. The event log is append-only so the full history is always preserved.
+GitMemoir is a full-stack GitHub audience tracker built with FastAPI and MongoDB. On every sync it fetches your followers and following from the GitHub REST API, diffs them against the stored snapshot in MongoDB, and logs every change as a timestamped event. The event log is append-only so the full history is always preserved.
 
 The dashboard has three views — current followers newest first, current following in GitHub order, and lost followers built from a MongoDB aggregation that deduplicates by user and excludes anyone who has re-followed. A daily cron job via GitHub Actions keeps everything up to date automatically.
 
@@ -23,7 +23,7 @@ The dashboard has three views — current followers newest first, current follow
 
 ## Getting Started
 
-This will help you understand how to set up GitPulse to track your own GitHub followers. To get a local copy up and running follow these simple steps.
+This will help you understand how to set up GitMemoir to track your own GitHub followers. To get a local copy up and running follow these simple steps.
 
 ## Installation Steps
 
@@ -32,8 +32,8 @@ This will help you understand how to set up GitPulse to track your own GitHub fo
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/KalyanM45/GitPulse.git
-   cd GitPulse
+   git clone https://github.com/KalyanM45/GitMemoir.git
+   cd GitMemoir
    ```
 
 2. **Create a Virtual Environment**
@@ -83,7 +83,7 @@ This will help you understand how to set up GitPulse to track your own GitHub fo
 
 ## API Key Setup
 
-GitPulse needs two credentials to run — a GitHub token and a MongoDB connection string.
+GitMemoir needs two credentials to run — a GitHub token and a MongoDB connection string.
 
 ### 1. GitHub Personal Access Token (`GITHUB_TOKEN`)
 
@@ -93,7 +93,7 @@ This is required. Without it, GitHub blocks the following list endpoint entirely
 
 1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
 2. Click **Generate new token (classic)**
-3. Set a name like `gitpulse` and choose an expiration
+3. Set a name like `gitmemoir` and choose an expiration
 4. Select the following scope:
    - `read:user` — to read your profile and your own following list
 5. Click **Generate token** and copy it immediately — you cannot see it again
@@ -107,7 +107,7 @@ GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### 2. MongoDB Connection URI (`MONGODB_URI`)
 
-GitPulse stores all follower snapshots and event history in MongoDB.
+GitMemoir stores all follower snapshots and event history in MongoDB.
 
 **For local development**, a local MongoDB instance works:
 ```dotenv
@@ -151,13 +151,13 @@ SYNC_INTERVAL_MINUTES=60
    | Instance Type | Free |
 
 3. Add environment variables: `GITHUB_TOKEN`, `GITHUB_USERNAME`, `MONGODB_URI`, `DB_NAME`
-4. Deploy — copy the URL you receive (e.g. `https://gitpulse-api.onrender.com`)
+4. Deploy — copy the URL you receive (e.g. `https://gitmemoir-api.onrender.com`)
 
 ### Frontend → Vercel
 
 1. Open `frontend/js/config.js` and set your Render URL:
    ```js
-   window.API_BASE = 'https://gitpulse-api.onrender.com'
+   window.API_BASE = 'https://gitmemoir-api.onrender.com'
    ```
 2. Push the change to GitHub
 3. Go to [vercel.com](https://vercel.com) → **New Project** → import your repo → **Deploy**
@@ -177,7 +177,7 @@ Go to your repo → **Settings** → **Secrets and variables** → **Actions** �
 
 > Use `GH_ANALYTICS_TOKEN` — not `GITHUB_TOKEN`, which is reserved by GitHub Actions itself.
 
-To test immediately: Actions tab → **GitPulse — Nightly Sync** → **Run workflow**.
+To test immediately: Actions tab → **GitMemoir — Nightly Sync** → **Run workflow**.
 
 ## Contributing
 
