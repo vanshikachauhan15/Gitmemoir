@@ -1,94 +1,47 @@
-# GitPulse
+# GitMemoir — GitHub Analytics Dashboard
 
-> A GitHub analytics dashboard for tracking repositories, audience insights, and GitHub activity in one place.
+GitMemoir is a full-stack GitHub analytics application that connects with the GitHub REST API to collect, process, and visualize GitHub profile, repository, follower, and activity data.
 
-GitPulse is a full-stack GitHub analytics application that connects with the GitHub REST API and presents useful repository and audience information through a modern web dashboard.
-
-The application fetches GitHub data, processes it through a FastAPI backend, stores the required information in MongoDB, and displays the results through a Next.js frontend.
+The application uses a **Next.js frontend**, **FastAPI backend**, and **MongoDB Atlas** for persistent data storage. Docker Compose is included to run the frontend and backend together with a single command.
 
 ---
 
 ## ✨ Features
 
-- 🔐 GitHub API integration
-- 📊 GitHub analytics dashboard
-- 📁 Repository listing and statistics
+- 📊 GitHub profile and repository analytics
+- 📁 Repository statistics and activity
 - ⭐ Repository star tracking
-- 👥 Audience and follower insights
-- 📈 Repository traffic information
-- 🔄 Manual data synchronization
-- 💾 MongoDB-based data storage
-- ⚡ FastAPI backend
+- 👥 Followers and following insights
+- 📈 Audience and GitHub activity data
+- 🔄 GitHub data synchronization
+- 💾 MongoDB-based data persistence
+- ⚡ FastAPI REST backend
 - 🌐 Next.js frontend
-- 🐳 Docker and Docker Compose support
-- 🔒 Environment-based configuration
+- 🐳 Docker & Docker Compose support
 - ❤️ Backend health monitoring
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-
-### Backend
-
-- Python
-- FastAPI
-- Uvicorn
-- Requests
-
-### Database
-
-- MongoDB
-- MongoDB Atlas
-
-### DevOps
-
-- Docker
-- Docker Compose
-
-### External API
-
-- GitHub REST API
+**Frontend:** Next.js, React, TypeScript, Tailwind CSS  
+**Backend:** Python, FastAPI, Uvicorn, Requests  
+**Database:** MongoDB, MongoDB Atlas  
+**DevOps:** Docker, Docker Compose  
+**API:** GitHub REST API
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Architecture
 
 ```text
-GitPulse/
-│
-├── .github/
-│
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   └── ...
-│   │
-│   ├── scripts/
-│   ├── venv/
-│   ├── .env
-│   ├── .env.example
-│   ├── Dockerfile
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── package-lock.json
-│   └── ...
-│
-├── scripts/
-│
-├── docker-compose.yml
-├── render.yaml
-├── .gitignore
-├── package-lock.json
-└── README.md
+              GitMemoir
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+   Next.js Frontend     FastAPI Backend
+      :3000                 :8000
+                              │
+                   ┌──────────┴──────────┐
+                   │                     │
+             GitHub REST API       MongoDB Atlas
