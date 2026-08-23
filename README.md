@@ -165,3 +165,11 @@ Docker
 Docker Compose
 ```
 GitMemoir — Turning GitHub activity into meaningful insights.
+
+Images:
+
+<img width="1710" height="1032" alt="image" src="https://github.com/user-attachments/assets/b48a2254-697b-4d84-aac8-73034f46d767" />
+
+
+<img width="1710" height="872" alt="image" src="https://github.com/user-attachments/assets/d0d76819-c338-42cf-924c-43c05c1ddcaf" />
+
