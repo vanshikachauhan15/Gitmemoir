@@ -45,3 +45,123 @@ The application uses a **Next.js frontend**, **FastAPI backend**, and **MongoDB 
                    ┌──────────┴──────────┐
                    │                     │
              GitHub REST API       MongoDB Atlas
+
+```
+
+##📂 Project Structure
+```
+GitMemoir/
+│
+├── backend/
+│   ├── app/
+│   ├── scripts/
+│   ├── .env
+│   ├── .env.example
+│   ├── Dockerfile
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── Dockerfile
+│   ├── package.json
+│   └── package-lock.json
+│
+├── .github/
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+```
+🚀 Getting Started
+Prerequisites
+
+Make sure you have:
+
+Git
+Docker Desktop
+GitHub account
+MongoDB Atlas account
+
+Check Docker:
+```
+docker --version
+docker compose version
+```
+
+🐳 Run with Docker
+
+From the project root:
+
+Build
+docker compose build
+Start
+docker compose up
+
+The application will be available at:
+```
+Frontend: http://localhost:3000
+Backend: http://localhost:8000
+Health Check: http://localhost:8000/health
+```
+
+To run in background:
+```
+docker compose up -d
+```
+To stop:
+```
+docker compose down
+```
+To rebuild after changes:
+```
+docker compose up --build
+```
+
+🏃 Run Without Docker
+Backend
+
+Create and activate a virtual environment:
+```
+python3 -m venv backend/venv
+source backend/venv/bin/activate
+```
+Install dependencies:
+```
+pip install -r backend/requirements.txt
+```
+Start FastAPI:
+```
+cd backend
+uvicorn app.main:app --reload
+```
+Backend:
+```
+http://localhost:8000
+```
+Frontend
+
+Open another terminal:
+```
+cd frontend
+npm install
+npm run dev
+```
+Frontend:
+```
+http://localhost:3000
+```
+
+🙌 Acknowledgements
+
+Built using:
+```
+GitHub REST API
+FastAPI
+Next.js
+React
+MongoDB
+MongoDB Atlas
+Docker
+Docker Compose
+```
+GitMemoir — Turning GitHub activity into meaningful insights.
